@@ -13,7 +13,7 @@ export default function Intro() {
             <div className="intro" id="intro">
                 <div className="left">
                     <div className="imgContainer">
-                        <img src="https://www.pngall.com/wp-content/uploads/2016/05/Man-Transparent.png" alt="man" />
+                        <img src="assets/pro.jpeg" alt="man" />
                         </div>
 
                 </div>
