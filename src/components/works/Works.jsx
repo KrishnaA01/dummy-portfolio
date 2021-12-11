@@ -11,33 +11,73 @@ export default function Works() {
     const data = [
         {
             id: "1",
-            icon: "./assets/mobile.svg",
-            title: "Web Design-1",
+            icon: "./assets/react.svg",
+            title: "React",
             desc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-            img: "./design.png"
+            img: "./assets/react.svg"
         },
         {
             id: "2",
-            icon: "./assets/mobile.svg",
-            title: "Web Design-2",
+            icon: "./assets/js.svg",
+            title: "javaScript",
             desc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-            img: "./design.png"
+            img: "./assets/js.svg"
         },
         {
             id: "3",
-            icon: "./assets/mobile.svg",
-            title: "Web Design-3",
+            icon: "./assets/nodejs.svg",
+            title: "NodeJs",
             desc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-            img: "./design.png"
+            img: "./assets/nodejs.svg"
         },
+        {
+            id: "4",
+            icon: "./assets/css.svg",
+            title: "CSS-3",
+            desc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+            img: "./assets/css.svg"
+        },
+        {
+            id: "5",
+            icon: "./assets/html.svg",
+            title: "HTML5",
+            desc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+            img: "./assets/html.svg"
+        },
+        {
+            id: "5",
+            icon: "./assets/mongodb.svg",
+            title: "MongoDB",
+            desc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+            img: "./assets/mongodb.svg"
+        }
        
     ]
 
-    const handleClick = (way)=> {
-        way === "left" 
-        ? setCurrentSlide (currentSlide > 0 ? currentSlide-1 : 2)
-        : setCurrentSlide (currentSlide < data.lenth-1 ? setCurrentSlide+1 :0);
+    const checkNumber = (number) => {
+        if (number > data.length-1){
+          return 0;
+        }
+        if (number < 0){
+          return data.length-1;
+        }
+        return number;
+      } 
+    const left = ()=> {
+        setCurrentSlide((currentSlide)=>{
+            let nextSlide = currentSlide+1;
+            return checkNumber(nextSlide);
+        })
     }
+    const right = ()=> {
+        setCurrentSlide((currentSlide)=>{
+            let nextSlide = currentSlide-1;
+            return checkNumber(nextSlide);
+        })
+    }
+
+
+
     return (
         <div className="works" id="works">
             <div className="slider" style={{transform:`translateX(-${currentSlide *100}vw )`}} >
@@ -51,18 +91,18 @@ export default function Works() {
                                 </div>
                                 <h2>{d.title}</h2>
                                 <p>{d.desc} </p>
-                                <span>Projects</span>
+                                <span>Projects{d.id} </span>
                             </div>
                         </div>
                         <div className="right">
-                            <img src="assets/design.png" alt="" />
+                            <img src={d.img} alt="" />
                         </div>
                     </div>
                 </div>
                 ))}
             </div>
-            <img src="assets/arrowLeft.svg" className="arrow left" alt="" onClick={()=>handleClick("left")} />
-            <img src="assets/arrowLeft.svg" className="arrow right" alt="" onClick={()=>handleClick()}/>
+            <img src="assets/arrowLeft.svg" className="arrow left" alt="" onClick={left} />
+            <img src="assets/arrowLeft.svg" className="arrow right" alt="" onClick={right}/>
         </div>
     )
 }
