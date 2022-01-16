@@ -1,8 +1,12 @@
-# Getting Started with Create React App
+*Screenshots*
+
+<img src="screenshots/p1.png" alt="drawing" width="500"/>
+<img src="screenshots/p2.png" alt="drawing" width="500"/>
+<img src="screenshots/p3.png" alt="drawing" width="500"/>
 
 
 
-## Available Scripts
+
 
 In the project directory, you can run:
 
