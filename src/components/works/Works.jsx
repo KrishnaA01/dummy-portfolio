@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './works.scss'
+import { v4 as uuidv4 } from 'uuid';
 
 
 
@@ -82,7 +83,7 @@ export default function Works() {
         <div className="works" id="works">
             <div className="slider" style={{transform:`translateX(-${currentSlide *100}vw )`}} >
                { data.map((d)=> (
-               <div className="container">
+               <div key={uuidv4()} className="container">
                     <div className="item">
                         <div className="left">
                             <div className="leftContainer">
@@ -95,7 +96,7 @@ export default function Works() {
                             </div>
                         </div>
                         <div className="right">
-                            <img src={d.img} alt="" />
+                            <img src={d.img} alt=""/>
                         </div>
                     </div>
                 </div>

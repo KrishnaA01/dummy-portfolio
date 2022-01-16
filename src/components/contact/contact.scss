@@ -16,6 +16,10 @@
 
         img {
             height: 100%;
+            
+            @include mobile{
+                width: 100%;
+            }
         }
     }
 
@@ -64,7 +68,7 @@
                 width: 150px;
                 height: 30px;
                 color: white;
-                background-color: crimson;
+                background-color: #00c4cc;
                 border: none;
                 border-radius:10px;
                 font-weight: 500;

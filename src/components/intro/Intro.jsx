@@ -13,9 +13,9 @@ export default function Intro() {
                 </div>
                 <div className="right">
                     <div className="wrapper">
-                        <h2>Hi There, I'm</h2>
-                        <h1>Krishna Mahato</h1>
-                        <h3>Web <span>Developer !</span></h3>
+                        <h2 style={{fontWeight:400}}>Hi There, I'm</h2>
+                        <h1>John Doe</h1>
+                        <h3 style={{fontWeight:300}}>Web <span>Developer !</span></h3>
                     </div>
                     <a href="#portfolio">
                         <img src="assets/downArrow.png" alt="" />

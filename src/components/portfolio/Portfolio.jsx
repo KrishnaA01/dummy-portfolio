@@ -2,6 +2,7 @@ import PortfolioList from "../portfolioList/PortfolioList"
 import React, { useState, useEffect } from "react"
 import "./portfolio.scss"
 import { featuredPortfolio,webPortfolio } from "../../data"
+import { v4 as uuidv4 } from 'uuid';
 
 
 
@@ -53,6 +54,7 @@ export default function Portfolio() {
             <ul>
                {list.map((item)=>(
                    <PortfolioList
+                key={uuidv4()}
                 title = {item.title} 
                 active={selected === item.id}
                 id={item.id}
@@ -64,7 +66,7 @@ export default function Portfolio() {
             </ul>
             <div className="container">
                 {data.map((d)=>(
-                <div className="item">
+                <div  key={uuidv4()} className="item">
                     <img 
                     src={d.img}
                     alt="digital marketing"
@@ -78,4 +80,3 @@ export default function Portfolio() {
     )
 }
 
-// http://www.srdmtrainings.com/wp-content/uploads/2019/09/digital-marketing.jpg
