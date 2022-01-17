@@ -30,7 +30,7 @@ export default function Contact() {
             </div>
             <div className="right">
                 <h2>Contact</h2>
-                <form onSubmit={handleSubmit}>
+                <form ref={form} onSubmit={handleSubmit}>
                     <input type="text" placeholder="Name" name="user_name"/>
                     <input type="text" placeholder="Email" name="user_email"/>
                     <textarea placeholder="Message" name="message"></textarea>
